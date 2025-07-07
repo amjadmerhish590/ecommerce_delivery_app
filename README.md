@@ -11,6 +11,17 @@ This app is designed for delivery staff to manage and track customer orders effi
 - 🔄 Approve orders and update delivery status
 - 📍 Track order locations and update their delivery progress
 
+## 🧱 Architecture
+
+This project follows the MVC (Model-View-Controller) architectural pattern:
+
+- Model → Defined inside the `lib/data/` directory. Responsible for data handling and structures.
+- View → Built inside the `lib/view/` directory. Includes all UI screens and components.
+- Controller → Managed in the `lib/controller/` directory. Handles the business logic and app state using GetX.
+
+This clean separation of concerns makes the app more maintainable, scalable, and testable.
+
+
 ## 🔐 Sensitive Configuration Handling
 
 - ✅ Sensitive Firebase configuration keys (`apiKey`, `appId`, `messagingSenderId`, `projectId`) are defined manually inside:

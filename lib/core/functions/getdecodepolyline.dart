@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:granddelivery/core/constant/key.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 
 
 Future getPolyline(lat, long, destLat, destLong) async{
   List<LatLng> polylineCo = [];
-  PolylinePoints polylinePoints = PolylinePoints();
+  await dotenv.load();
+  PolylinePoints polylinePoints = PolylinePoints(apiKey: dotenv.env['GOOGLE_MAPS_API_KEY']!);
   Set<Polyline> polylineSet = {};
 
 
